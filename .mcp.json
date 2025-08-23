@@ -1,0 +1,59 @@
+{
+  "mcpServers": {
+    "memory-bank": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@allpepper/memory-bank-mcp"],
+      "env": {
+        "MEMORY_BANK_ROOT": "./.memory"
+      }
+    },
+    "ai-distiller": {
+      "type": "stdio",
+      "command": "aid-mcp",
+      "args": []
+    },
+    "context7": {
+      "type": "stdio",
+
+      "command": "bunx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+
+      "command": "bunx",
+      "args": ["@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena-mcp-server",
+        "--enable-web-dashboard",
+        "false",
+        "--enable-gui-log-window",
+        "false",
+        "--context",
+        "ide-assistant"
+      ]
+    },
+    "perplexity-deep-research": {
+      "type": "stdio",
+      "command": "/home/michael/Github/perplexity-deep-research-mcp/.venv/bin/python",
+      "args": ["/home/michael/Github/perplexity-deep-research-mcp/server.py"]
+    },
+    "@21st-dev/magic": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@21st-dev/magic@latest", "API_KEY=${TWENTY_API_KEY}"]
+    },
+    "shadcn-ui": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["@jpisnice/shadcn-ui-mcp-server"]
+    }
+  }
+}
