@@ -26,7 +26,7 @@
       "includeLogsCount": 50
     }
   },
-  "include": [".claude/**", ".memory/**", "CLAUDE.md"],
+  "include": [".claude/**", ".specs/**", "CLAUDE.md"],
   "ignore": {
     "useGitignore": true,
     "useDefaultPatterns": true

@@ -5,7 +5,7 @@
       "command": "bunx",
       "args": ["-y", "@allpepper/memory-bank-mcp"],
       "env": {
-        "MEMORY_BANK_ROOT": "./.memory"
+        "MEMORY_BANK_ROOT": "./.specs"
       }
     },
     "ai-distiller": {

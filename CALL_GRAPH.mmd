@@ -1,0 +1,37 @@
+graph TD
+    subgraph "Блок 1: Инициализация Проекта (Выполняется один раз)"
+        A(Пользователь) --> cmd1[/new-project/]
+        subgraph "Цепочка Первичной Настройки"
+            direction LR
+            cmd1 --> cmd2[/create-concept/] --> cmd3[/create-architecture/] --> cmd4[/create-roadmap/] --> cmd5[/setup-foundation/]
+        end
+        cmd5 --> F["✅ Готовый Фундамент Проекта (.specs/ + структура папок)"]
+    end
+
+    subgraph "Блок 2: Цикл Разработки (Основная работа)"
+        F --> G{Что делаем?}
+
+        subgraph "Контур 'Genesis': Создание Нового"
+            G -- Новая фича --> cmd6[/epic/]
+            cmd6 --> ag_pm["product-manager-agent"]
+            ag_pm --> H["📝 Новый Эпик (.specs/epics/EP-XXX.md)"]
+            H --> cmd7[/implement/]
+            cmd7 --> wf_genesis["wf-feature-development.md"]
+            wf_genesis --> I["🚀 Новый Код + Обновленные Спеки"]
+        end
+
+        subgraph "Контур 'Atomiton': Изменение Существующего"
+             G -- Правим спеки --> J["👨‍💻 Пользователь редактирует .specs/"]
+             J --> cmd8[/apply-changes/]
+             cmd8 --> ag_diff["diff-analyzer-agent"]
+             ag_diff --> ag_m_planner["migration-planner-agent"]
+             ag_m_planner --> wf_atomiton["wf-atomiton-main.md"]
+             wf_atomiton --> K["🔧 Обновленный Код"]
+        end
+    end
+
+    subgraph "Блок 3: Утилиты (Вспомогательные действия)"
+         F --> cmd9[/index/]
+         cmd9 --> ag_indexer["indexer-agent"]
+    end
+
