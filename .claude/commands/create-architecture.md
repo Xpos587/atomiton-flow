@@ -1,7 +1,7 @@
 ---
 name: create-architecture
 description: Создает 'System Architecture Document' на основе утвержденной концепции
-allowed-tools: Read, WebSearch, mcp__memory-bank__memory_bank_read, mcp__ai-distiller__aid_generate_diagram, mcp__perplexity-deep-research__quick_research
+allowed-tools: Read, WebSearch, mcp__memory-bank__memory_bank_read, mcp__ai-distiller__aid_generate_diagram
 model: claude-sonnet-4-0
 ---
 

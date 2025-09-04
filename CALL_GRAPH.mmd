@@ -16,17 +16,25 @@ graph TD
             cmd6 --> ag_pm["product-manager-agent"]
             ag_pm --> H["📝 Новый Эпик (.specs/epics/EP-XXX.md)"]
             H --> cmd7[/implement/]
-            cmd7 --> wf_genesis["wf-feature-development.md"]
+            cmd7 --> wf_genesis["wf-genesis-main.md"]
             wf_genesis --> I["🚀 Новый Код + Обновленные Спеки"]
         end
 
-        subgraph "Контур 'Atomiton': Изменение Существующего"
-             G -- Правим спеки --> J["👨‍💻 Пользователь редактирует .specs/"]
+        subgraph "Контур 'Atomiton': Транзакционное Изменение через Git"
+             G -- Правим спеки --> J["👨‍💻 Пользователь редактирует .specs/ и делает 'git commit'"]
              J --> cmd8[/apply-changes/]
-             cmd8 --> ag_diff["diff-analyzer-agent"]
-             ag_diff --> ag_m_planner["migration-planner-agent"]
-             ag_m_planner --> wf_atomiton["wf-atomiton-main.md"]
-             wf_atomiton --> K["🔧 Обновленный Код"]
+             
+             subgraph "Процесс Транзакции"
+                direction TB
+                cmd8 --> git_worktree["Создание 'git worktree'\n(Изолированная Git-ветка)"]
+                git_worktree --> ag_diff["diff-analyzer-agent"]
+                ag_diff --> ag_m_planner["migration-planner-agent\n(Создает Changeset.md в worktree)"]
+                ag_m_planner --> wf_atomiton["wf-genesis-main.md\n(Исполнение + Тесты внутри worktree)"]
+                wf_atomiton -- использует --> promotion_agent["promotion-agent (new)"]
+                promotion_agent --> git_ops["git commit & git merge --ff-only & Очистка worktree"]
+             end
+
+             git_ops --> K["✅ Атомарный коммит в основной ветке"]
         end
     end
 
@@ -34,4 +42,3 @@ graph TD
          F --> cmd9[/index/]
          cmd9 --> ag_indexer["indexer-agent"]
     end
-

@@ -1,2 +1,3 @@
 # Atomiton Flow temporary directories
 .tasks/
+.env.local

@@ -40,20 +40,24 @@
         "ide-assistant"
       ]
     },
-    "perplexity-deep-research": {
-      "type": "stdio",
-      "command": "/home/michael/Github/perplexity-deep-research-mcp/.venv/bin/python",
-      "args": ["/home/michael/Github/perplexity-deep-research-mcp/server.py"]
-    },
-    "@21st-dev/magic": {
-      "type": "stdio",
-      "command": "bunx",
-      "args": ["-y", "@21st-dev/magic@latest", "API_KEY=${TWENTY_API_KEY}"]
-    },
     "shadcn-ui": {
       "type": "stdio",
       "command": "bunx",
       "args": ["@jpisnice/shadcn-ui-mcp-server"]
+    },
+    "gemini-cli": {
+      "command": "bunx",
+      "args": ["-y", "gemini-mcp-tool"]
+    },
+    "codex": {
+      "type": "stdio",
+      "command": "codex",
+      "args": ["mcp"]
+    },
+    "21st-dev/magic": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@21st-dev/magic@latest", "API_KEY=${TWENTY_API_KEY}"]
     }
   }
 }
