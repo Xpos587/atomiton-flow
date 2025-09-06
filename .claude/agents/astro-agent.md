@@ -1,7 +1,7 @@
 ---
 name: astro-agent
 description: Эксперт по Astro. Создает и модифицирует страницы (.astro) и лэйауты.
-tools: Read, Write, Edit, MultiEdit, LS, Grep
+tools: Read, Write, Edit, MultiEdit
 model: sonnet
 ---
 

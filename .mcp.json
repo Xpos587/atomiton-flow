@@ -1,32 +1,36 @@
 {
   "mcpServers": {
     "memory-bank": {
-      "type": "stdio",
       "command": "bunx",
-      "args": ["-y", "@allpepper/memory-bank-mcp"],
+      "args": [
+        "-y",
+        "@allpepper/memory-bank-mcp"
+      ],
       "env": {
         "MEMORY_BANK_ROOT": "./.specs"
-      }
+      },
+      "type": "stdio"
     },
     "ai-distiller": {
-      "type": "stdio",
       "command": "aid-mcp",
-      "args": []
+      "args": [],
+      "type": "stdio"
     },
     "context7": {
-      "type": "stdio",
-
       "command": "bunx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "args": [
+        "@upstash/context7-mcp"
+      ],
+      "type": "stdio"
     },
     "sequential-thinking": {
-      "type": "stdio",
-
       "command": "bunx",
-      "args": ["@modelcontextprotocol/server-sequential-thinking"]
+      "args": [
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "type": "stdio"
     },
     "serena": {
-      "type": "stdio",
       "command": "uvx",
       "args": [
         "--from",
@@ -38,26 +42,16 @@
         "false",
         "--context",
         "ide-assistant"
-      ]
+      ],
+      "type": "stdio"
     },
     "shadcn-ui": {
-      "type": "stdio",
       "command": "bunx",
-      "args": ["@jpisnice/shadcn-ui-mcp-server"]
-    },
-    "gemini-cli": {
-      "command": "bunx",
-      "args": ["-y", "gemini-mcp-tool"]
-    },
-    "codex": {
-      "type": "stdio",
-      "command": "codex",
-      "args": ["mcp"]
-    },
-    "21st-dev/magic": {
-      "type": "stdio",
-      "command": "bunx",
-      "args": ["-y", "@21st-dev/magic@latest", "API_KEY=${TWENTY_API_KEY}"]
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ],
+      "type": "stdio"
     }
   }
 }

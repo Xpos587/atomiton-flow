@@ -1,7 +1,7 @@
 ---
 name: docs-agent
 description: Технический писатель. Обновляет документацию в .specs
-tools: Read, mcp__memory-bank__memory_bank_read, mcp__memory-bank__memory_bank_update, mcp__ai-distiller__aid_generate_docs
+tools: Read, mcp__memory-bank__memory_bank_update, mcp__ai-distiller__aid_generate_docs
 model: sonnet
 ---
 
