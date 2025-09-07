@@ -2,10 +2,7 @@
   "mcpServers": {
     "memory-bank": {
       "command": "bunx",
-      "args": [
-        "-y",
-        "@allpepper/memory-bank-mcp"
-      ],
+      "args": ["-y", "@allpepper/memory-bank-mcp"],
       "env": {
         "MEMORY_BANK_ROOT": "./.specs"
       },
@@ -16,18 +13,9 @@
       "args": [],
       "type": "stdio"
     },
-    "context7": {
-      "command": "bunx",
-      "args": [
-        "@upstash/context7-mcp"
-      ],
-      "type": "stdio"
-    },
     "sequential-thinking": {
       "command": "bunx",
-      "args": [
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
+      "args": ["@modelcontextprotocol/server-sequential-thinking"],
       "type": "stdio"
     },
     "serena": {
@@ -45,12 +33,9 @@
       ],
       "type": "stdio"
     },
-    "shadcn-ui": {
+    "shadcn": {
       "command": "bunx",
-      "args": [
-        "shadcn@latest",
-        "mcp"
-      ],
+      "args": ["shadcn@latest", "mcp"],
       "type": "stdio"
     }
   }
